@@ -17,4 +17,8 @@ export class EmployeeService {
       employee
     );
   }
+
+  public getEmployees(): Observable<Employee[]> {
+    return this.httpClient.get<Employee[]>(`${this.api}/get/employee`);
+  }
 }
