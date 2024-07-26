@@ -23,7 +23,10 @@ export class EmployeeListComponent implements OnInit {
     'edit',
     'delete',
   ];
-  constructor(private employeeService: EmployeeService, private router: Router) {
+  constructor(
+    private employeeService: EmployeeService,
+    private router: Router
+  ) {
     this.getEmployeeList();
   }
 
@@ -53,7 +56,7 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
-  updateEmployee(employeeId: number): void{
-this.router.navigate(['/employee', {employeeId: employeeId}]);
+  updateEmployee(employeeId: number): void {
+    this.router.navigate(['/employee', { employeeId: employeeId }]);
   }
 }

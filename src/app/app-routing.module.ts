@@ -7,14 +7,18 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeResolver } from './employee.resolver';
 
 const routes: Routes = [
-  {path: 'header', component: HeaderComponent},
-  {path: 'employee', component: EmployeeComponent, resolve: {employee: EmployeeResolver}},
-  {path: 'employee-list', component: EmployeeListComponent},
-  {path: '', component: HomeComponent}
+  { path: 'header', component: HeaderComponent },
+  {
+    path: 'employee',
+    component: EmployeeComponent,
+    resolve: { employee: EmployeeResolver },
+  },
+  { path: 'employee-list', component: EmployeeListComponent },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
