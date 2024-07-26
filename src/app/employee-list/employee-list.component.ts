@@ -10,7 +10,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class EmployeeListComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource: Employee[] = [];
+
+  displayedColumns: string[] = ['employeeId', 'employeeName', 'employeeContactNumber', 'employeeAddress', 'employeeGender', 'employeeDepartment', 'employeeSkills'];
   constructor(private employeeService: EmployeeService) {
     this.getEmployeeList();
   }
