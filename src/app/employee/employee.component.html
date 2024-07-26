@@ -1,6 +1,8 @@
 <div class="container">
   <div align="right">
-    <button mat-raised-button color="accent" routerLink="/employee-list">Go to Employee List</button>
+    <button mat-raised-button color="accent" routerLink="/employee-list">
+      Go to Employee List
+    </button>
   </div>
   <div class="card p-5 mt-2">
     <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
@@ -51,7 +53,10 @@
 
       <mat-form-field>
         <mat-label>Choose your department</mat-label>
-        <mat-select name="employeeDepartment" [(ngModel)]="employee.employeeDepartment">
+        <mat-select
+          name="employeeDepartment"
+          [(ngModel)]="employee.employeeDepartment"
+        >
           <mat-option value="IT">IT</mat-option>
           <mat-option value="Network">Network</mat-option>
           <mat-option value="Repair">Repair</mat-option>
@@ -61,8 +66,18 @@
       <div>
         <Label>Gender</Label>
         <mat-radio-group aria-label="Select an option">
-          <mat-radio-button [checked]="employee.employeeGender == 'M'" (click)="selectGender('M')" value="M">M</mat-radio-button>
-          <mat-radio-button [checked]="employee.employeeGender == 'F'" (click)="selectGender('F')" value="F">F</mat-radio-button>
+          <mat-radio-button
+            [checked]="employee.employeeGender == 'M'"
+            (click)="selectGender('M')"
+            value="M"
+            >M</mat-radio-button
+          >
+          <mat-radio-button
+            [checked]="employee.employeeGender == 'F'"
+            (click)="selectGender('F')"
+            value="F"
+            >F</mat-radio-button
+          >
         </mat-radio-group>
       </div>
 
@@ -81,10 +96,34 @@
       <div>
         <Label>Skills</Label>
         <section class="example-section">
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Java" class="example-margin" [checked]="checkSkills('Java')">Java</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Angular" class="example-margin" [checked]="checkSkills('Angular')">Angular</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Spring Boot" class="example-margin" [checked]="checkSkills('Spring Boot')">Spring Boot</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="AWS" class="example-margin" [checked]="checkSkills('AWS')">AWS</mat-checkbox>
+          <mat-checkbox
+            (change)="onSkillsChanges($event)"
+            value="Java"
+            class="example-margin"
+            [checked]="checkSkills('Java')"
+            >Java</mat-checkbox
+          >
+          <mat-checkbox
+            (change)="onSkillsChanges($event)"
+            value="Angular"
+            class="example-margin"
+            [checked]="checkSkills('Angular')"
+            >Angular</mat-checkbox
+          >
+          <mat-checkbox
+            (change)="onSkillsChanges($event)"
+            value="Spring Boot"
+            class="example-margin"
+            [checked]="checkSkills('Spring Boot')"
+            >Spring Boot</mat-checkbox
+          >
+          <mat-checkbox
+            (change)="onSkillsChanges($event)"
+            value="AWS"
+            class="example-margin"
+            [checked]="checkSkills('AWS')"
+            >AWS</mat-checkbox
+          >
         </section>
       </div>
 
