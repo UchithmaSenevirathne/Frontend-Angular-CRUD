@@ -11,27 +11,30 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './employee.component.scss',
 })
 export class EmployeeComponent implements OnInit {
-
   isCreateEmployee: boolean = true;
-  
+
   employee: any;
 
   skills: string[] = [];
 
-  constructor(private employeeService: EmployeeService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private employeeService: EmployeeService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.employee = this.activatedRoute.snapshot.data['employee'];
     console.log(this.employee);
 
-    if(this.employee && this.employee.employeeId > 0){
+    if (this.employee && this.employee.employeeId > 0) {
       this.isCreateEmployee = false;
 
-      if(this.employee.employeeSkills != ''){
+      if (this.employee.employeeSkills != '') {
         this.skills = [];
         this.skills = this.employee.employeeSkills.split(',');
       }
-    }else{
+    } else {
       this.isCreateEmployee = true;
     }
   }
@@ -54,20 +57,27 @@ export class EmployeeComponent implements OnInit {
   }
 
   saveEmployee(employeeForm: NgForm): void {
-    this.employeeService.saveEmployee(this.employee).subscribe({
-      next: (res: Employee) => {
-        console.log(res);
-        employeeForm.reset();
-        this.employee.employeeGender = '';
-        this.router.navigate(["/employee-list"])
-      },
-      error: (err: HttpErrorResponse) => {
-        console.log(err);
-      },
-    });
+    if (this.isCreateEmployee) {
+      this.employeeService.saveEmployee(this.employee).subscribe({
+        next: (res: Employee) => {
+          console.log(res);
+          employeeForm.reset();
+          this.employee.employeeGender = '';
+          this.router.navigate(['/employee-list']);
+        },
+        error: (err: HttpErrorResponse) => {
+          console.log(err);
+        },
+      });
+    }else{
+      
+    }
   }
 
-  checkSkills(skill: string){
-    return this.employee.employeeSkills != null && this.employee.employeeSkills.includes(skill);
+  checkSkills(skill: string) {
+    return (
+      this.employee.employeeSkills != null &&
+      this.employee.employeeSkills.includes(skill)
+    );
   }
 }
