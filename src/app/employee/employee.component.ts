@@ -3,7 +3,7 @@ import { Employee } from '../employee.model';
 import { NgForm } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -12,12 +12,16 @@ import { Router } from '@angular/router';
 })
 export class EmployeeComponent implements OnInit {
   
+  employee: any;
 
   skills: string[] = [];
 
-  constructor(private employeeService: EmployeeService, private router: Router) {}
+  constructor(private employeeService: EmployeeService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.employee = this.activatedRoute.snapshot.data['employee'];
+    console.log(this.employee);
+  }
 
   selectGender(gender: string): void {
     this.employee.employeeGender = gender;
