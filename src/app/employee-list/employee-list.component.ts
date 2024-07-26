@@ -22,7 +22,7 @@ export class EmployeeListComponent implements OnInit {
   getEmployeeList(): void {
     this.employeeService.getEmployees().subscribe({
       next: (res: Employee[]) => {
-        console.log(res);
+       this.dataSource = res;
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
