@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card p-5 mt-5">
-    <form>
+    <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
       <mat-form-field appearance="outline">
         <mat-label>Employee Id</mat-label>
         <input
