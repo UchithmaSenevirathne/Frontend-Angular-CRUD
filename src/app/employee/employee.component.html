@@ -48,7 +48,7 @@
 
       <mat-form-field>
         <mat-label>Choose your department</mat-label>
-        <mat-select>
+        <mat-select name="employeeDepartment" [(ngModel)]="employee.employeeDepartment">
           <mat-option value="IT">IT</mat-option>
           <mat-option value="Network">Network</mat-option>
           <mat-option value="Repair">Repair</mat-option>
