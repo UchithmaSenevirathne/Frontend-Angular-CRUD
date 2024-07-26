@@ -58,8 +58,8 @@
       <div>
         <Label>Gender</Label>
         <mat-radio-group aria-label="Select an option">
-          <mat-radio-button (click)="selectGender('M')" value="M">M</mat-radio-button>
-          <mat-radio-button (click)="selectGender('F')" value="F">F</mat-radio-button>
+          <mat-radio-button [checked]="employee.employeeGender == 'M'" (click)="selectGender('M')" value="M">M</mat-radio-button>
+          <mat-radio-button [checked]="employee.employeeGender == 'F'" (click)="selectGender('F')" value="F">F</mat-radio-button>
         </mat-radio-group>
       </div>
 
@@ -78,10 +78,10 @@
       <div>
         <Label>Skills</Label>
         <section class="example-section">
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Java" class="example-margin">Java</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Angular" class="example-margin">Angular</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Spring Boot" class="example-margin">Spring Boot</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="AWS" class="example-margin">AWS</mat-checkbox>
+          <mat-checkbox (change)="onSkillsChanges($event)" value="Java" class="example-margin" [checked]="checkSkills('Java')">Java</mat-checkbox>
+          <mat-checkbox (change)="onSkillsChanges($event)" value="Angular" class="example-margin" [checked]="checkSkills('Angular')">Angular</mat-checkbox>
+          <mat-checkbox (change)="onSkillsChanges($event)" value="Spring Boot" class="example-margin" [checked]="checkSkills('Spring Boot')">Spring Boot</mat-checkbox>
+          <mat-checkbox (change)="onSkillsChanges($event)" value="AWS" class="example-margin" [checked]="checkSkills('AWS')">AWS</mat-checkbox>
         </section>
       </div>
 

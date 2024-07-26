@@ -48,10 +48,15 @@ export class EmployeeComponent implements OnInit {
       next: (res: Employee) => {
         console.log(res);
         employeeForm.reset();
+        this.employee.employeeGender = '';
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
       },
     });
+  }
+
+  checkSkills(skill: string){
+    return this.employee.employeeSkills != null && this.employee.employeeSkills.includes(skill);
   }
 }
