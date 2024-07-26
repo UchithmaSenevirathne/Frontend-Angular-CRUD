@@ -5,7 +5,7 @@ import {
 } from '@angular/router';
 import { EmployeeService } from './employee.service';
 import { inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Employee } from './employee.model';
 
 export const EmployeeResolver: ResolveFn<any> = (
@@ -17,8 +17,19 @@ export const EmployeeResolver: ResolveFn<any> = (
 
     if(employeeId){
         //make api call and get data for given employee id
-        return this.employeeService.getEmployees
+        return employeeService.getEmployee(Number(employeeId));
     }else{
         //create and return empty employee details
+        const employee: Employee = {
+            employeeId: 0,
+            employeeName: '',
+            employeeContactNumber: '',
+            employeeAddress: '',
+            employeeGender: '',
+            employeeDepartment: '',
+            employeeSkills: '',
+          }
+
+          return of(employee);
     }
 };
