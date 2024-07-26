@@ -70,7 +70,16 @@ export class EmployeeComponent implements OnInit {
         },
       });
     }else{
-      
+      this.employeeService.updateEmployee(this.employee).subscribe(
+        {
+          next: (res: Employee) => {
+            this.router.navigate(['/employee-list']);
+          },
+          error: (err: HttpErrorResponse) => {
+            console.log(err);
+          }
+        }
+      )
     }
   }
 
