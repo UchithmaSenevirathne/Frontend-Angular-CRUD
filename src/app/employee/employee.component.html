@@ -5,7 +5,7 @@
         <mat-label>Employee Id</mat-label>
         <input
           matInput
-          placeholder="Placeholder"
+          placeholder="Employee Id"
           name="employeeId"
           [(ngModel)]="employee.employeeId"
         />
@@ -13,24 +13,36 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-label>Employee Name</mat-label>
+        <input
+          matInput
+          placeholder="Employee Name"
+          name="employeeName"
+          [(ngModel)]="employee.employeeName"
+        />
+        <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-label>Contact Number</mat-label>
+        <input
+          matInput
+          placeholder="Contact Number"
+          name="employeeContactNumber"
+          [(ngModel)]="employee.employeeContactNumber"
+        />
+        <mat-icon matSuffix>call</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-label>Employee Address</mat-label>
+        <input
+          matInput
+          placeholder="Employee Address"
+          name="employeeAddress"
+          [(ngModel)]="employee.employeeAddress"
+        />
+        <mat-icon matSuffix>home</mat-icon>
       </mat-form-field>
 
       <mat-form-field>
