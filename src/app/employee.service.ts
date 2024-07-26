@@ -4,15 +4,17 @@ import { Employee } from './employee.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
+  api = 'http://localhost:9090';
 
-  api = "http://localhost:9090"
-
-  public saveEmployee(employee: Employee): Observable<Employee>{
-    return this.httpClient.post<Employee>(`${this.api}/save/employee`, employee);
+  public saveEmployee(employee: Employee): Observable<Employee> {
+    return this.httpClient.post<Employee>(
+      `${this.api}/save/employee`,
+      employee
+    );
   }
 }
