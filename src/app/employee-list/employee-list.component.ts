@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -22,7 +23,7 @@ export class EmployeeListComponent implements OnInit {
     'edit',
     'delete',
   ];
-  constructor(private employeeService: EmployeeService) {
+  constructor(private employeeService: EmployeeService, private router: Router) {
     this.getEmployeeList();
   }
 
@@ -50,5 +51,9 @@ export class EmployeeListComponent implements OnInit {
         console.log(err);
       },
     });
+  }
+
+  updateEmployee(employeeId: number): void{
+this.router.navigate(['/employee', {employeeId: employeeId}]);
   }
 }
