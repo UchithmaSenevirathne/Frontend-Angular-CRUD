@@ -58,8 +58,8 @@
       <div>
         <Label>Gender</Label>
         <mat-radio-group aria-label="Select an option">
-          <mat-radio-button value="M">M</mat-radio-button>
-          <mat-radio-button value="F">F</mat-radio-button>
+          <mat-radio-button (click)="selectGender('M')" value="M">M</mat-radio-button>
+          <mat-radio-button (click)="selectGender('F')" value="F">F</mat-radio-button>
         </mat-radio-group>
       </div>
 

@@ -19,4 +19,8 @@ export class EmployeeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectGender(gender: string): void{
+    this.employee.employeeGender = gender;
+  }
 }
