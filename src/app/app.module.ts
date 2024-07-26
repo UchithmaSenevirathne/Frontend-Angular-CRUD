@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     MatButtonModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [
     provideClientHydration(),

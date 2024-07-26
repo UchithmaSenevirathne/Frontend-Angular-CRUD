@@ -9,6 +9,8 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrl: './employee-list.component.scss',
 })
 export class EmployeeListComponent implements OnInit {
+
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   constructor(private employeeService: EmployeeService) {
     this.getEmployeeList();
   }
