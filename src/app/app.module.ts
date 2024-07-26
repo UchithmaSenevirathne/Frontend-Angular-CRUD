@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 
@@ -15,7 +16,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
