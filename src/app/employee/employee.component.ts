@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './employee.component.scss',
 })
 export class EmployeeComponent implements OnInit {
+
+  isCreateEmployee: boolean = true;
   
   employee: any;
 
@@ -21,6 +23,17 @@ export class EmployeeComponent implements OnInit {
   ngOnInit(): void {
     this.employee = this.activatedRoute.snapshot.data['employee'];
     console.log(this.employee);
+
+    if(this.employee && this.employee.employeeId > 0){
+      this.isCreateEmployee = false;
+
+      if(this.employee.employeeSkills != ''){
+        this.skills = [];
+        this.skills = this.employee.employeeSkills.split(',');
+      }
+    }else{
+      this.isCreateEmployee = true;
+    }
   }
 
   selectGender(gender: string): void {
