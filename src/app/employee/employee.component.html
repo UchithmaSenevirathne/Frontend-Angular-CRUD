@@ -3,7 +3,12 @@
     <form>
       <mat-form-field appearance="outline">
         <mat-label>Employee Id</mat-label>
-        <input matInput placeholder="Placeholder" />
+        <input
+          matInput
+          placeholder="Placeholder"
+          name="employeeId"
+          [(ngModel)]="employee.employeeId"
+        />
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       </mat-form-field>
 

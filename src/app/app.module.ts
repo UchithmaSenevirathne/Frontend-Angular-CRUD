@@ -7,7 +7,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
-import {MatGridListModule} from '@angular/material/grid-list';
+import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
 import { EmployeeComponent } from './employee/employee.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -17,6 +17,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatRadioModule,
     MatCheckboxModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     provideClientHydration(),

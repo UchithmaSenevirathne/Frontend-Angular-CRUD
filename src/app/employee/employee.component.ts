@@ -8,13 +8,13 @@ import { Employee } from '../employee.model';
 })
 export class EmployeeComponent implements OnInit {
   employee: Employee = {
-    employeeId: 0,
-    employeeName: '',
-    employeeContactNumber: '',
-    employeeAddress: '',
-    employeeGender: '',
-    employeeDepartment: '',
-    employeeSkills: '',
+    employeeId: 1,
+    employeeName: 'Uchithma',
+    employeeContactNumber: '6568498498',
+    employeeAddress: 'Galle',
+    employeeGender: 'F',
+    employeeDepartment: 'IT',
+    employeeSkills: 'Java',
   };
   constructor() {}
 
