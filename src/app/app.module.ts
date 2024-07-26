@@ -9,8 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { EmployeeComponent } from './employee/employee.component';
-
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,8 @@ import { EmployeeComponent } from './employee/employee.component';
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule
   ],
   providers: [
     provideClientHydration(),
