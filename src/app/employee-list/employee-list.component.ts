@@ -12,7 +12,7 @@ export class EmployeeListComponent implements OnInit {
 
   dataSource: Employee[] = [];
 
-  displayedColumns: string[] = ['employeeId', 'employeeName', 'employeeContactNumber', 'employeeAddress', 'employeeGender', 'employeeDepartment', 'employeeSkills'];
+  displayedColumns: string[] = ['employeeId', 'employeeName', 'employeeContactNumber', 'employeeAddress', 'employeeGender', 'employeeDepartment', 'employeeSkills', 'delete'];
   constructor(private employeeService: EmployeeService) {
     this.getEmployeeList();
   }
