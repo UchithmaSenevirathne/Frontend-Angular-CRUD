@@ -29,4 +29,8 @@ export class EmployeeListComponent implements OnInit {
       },
     });
   }
+
+  deleteEmployee(employeeId: number): void{
+    console.log(employeeId);
+  }
 }
