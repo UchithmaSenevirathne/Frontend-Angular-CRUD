@@ -8,7 +8,7 @@ import { Employee } from '../employee.model';
 })
 export class EmployeeComponent implements OnInit {
   employee: Employee = {
-    employeeId: 1,
+    employeeId: 0,
     employeeName: '',
     employeeContactNumber: '',
     employeeAddress: '',
