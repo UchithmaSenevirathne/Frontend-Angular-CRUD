@@ -9,10 +9,18 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrl: './employee-list.component.scss',
 })
 export class EmployeeListComponent implements OnInit {
-
   dataSource: Employee[] = [];
 
-  displayedColumns: string[] = ['employeeId', 'employeeName', 'employeeContactNumber', 'employeeAddress', 'employeeGender', 'employeeDepartment', 'employeeSkills', 'delete'];
+  displayedColumns: string[] = [
+    'employeeId',
+    'employeeName',
+    'employeeContactNumber',
+    'employeeAddress',
+    'employeeGender',
+    'employeeDepartment',
+    'employeeSkills',
+    'delete',
+  ];
   constructor(private employeeService: EmployeeService) {
     this.getEmployeeList();
   }
@@ -22,7 +30,7 @@ export class EmployeeListComponent implements OnInit {
   getEmployeeList(): void {
     this.employeeService.getEmployees().subscribe({
       next: (res: Employee[]) => {
-       this.dataSource = res;
+        this.dataSource = res;
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
@@ -30,7 +38,16 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
-  deleteEmployee(employeeId: number): void{
+  deleteEmployee(employeeId: number): void {
     console.log(employeeId);
+    this.employeeService.deleteEmployee(employeeId).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.getEmployeeList();
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      },
+    });
   }
 }
