@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { EmployeeComponent } from './employee/employee.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AppRoutingModule,
     MatToolbarModule,
     MatGridListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     provideClientHydration(),
