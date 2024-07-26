@@ -78,10 +78,10 @@
       <div>
         <Label>Skills</Label>
         <section class="example-section">
-          <mat-checkbox class="example-margin">Java</mat-checkbox>
-          <mat-checkbox class="example-margin">Angular</mat-checkbox>
-          <mat-checkbox class="example-margin">Spring Boot</mat-checkbox>
-          <mat-checkbox class="example-margin">AWS</mat-checkbox>
+          <mat-checkbox (change)="onSkillsChanges($event)" value="Java" class="example-margin">Java</mat-checkbox>
+          <mat-checkbox (change)="onSkillsChanges($event)" value="Angular" class="example-margin">Angular</mat-checkbox>
+          <mat-checkbox (change)="onSkillsChanges($event)" value="Spring Boot" class="example-margin">Spring Boot</mat-checkbox>
+          <mat-checkbox (change)="onSkillsChanges($event)" value="AWS" class="example-margin">AWS</mat-checkbox>
         </section>
       </div>
 

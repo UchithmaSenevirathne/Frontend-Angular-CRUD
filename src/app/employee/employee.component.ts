@@ -16,11 +16,27 @@ export class EmployeeComponent implements OnInit {
     employeeDepartment: '',
     employeeSkills: '',
   };
+
+  skills: string[] = [];
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  selectGender(gender: string): void{
+  selectGender(gender: string): void {
     this.employee.employeeGender = gender;
+  }
+
+  onSkillsChanges(event: any): void {
+    console.log(event);
+    if (event.checked) {
+      this.skills.push(event.source.value);
+    } else {
+      this.skills.forEach((item, index) => {
+        if (item == event.source.value) this.skills.splice(index, 1);
+      });
+    }
+
+    this.employee.employeeSkills = this.skills.toString();
   }
 }
