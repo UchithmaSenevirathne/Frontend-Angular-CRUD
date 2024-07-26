@@ -11,7 +11,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { EmployeeComponent } from './employee/employee.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [
     provideClientHydration(),
